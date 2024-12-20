@@ -1,4 +1,4 @@
-package com.dlskawo0409.demo.board.persentation;
+package com.dlskawo0409.demo.board.presentation;
 
 import com.dlskawo0409.demo.board.application.BoardService;
 import com.dlskawo0409.demo.board.domain.Board;
@@ -26,20 +26,20 @@ public class BoardController {
     private final BoardService boardService;
 
     @PostMapping
-    public ResponseEntity<?> createBoardController(@RequestBody BoardInsertRequest boardInsertRequest,
+    public ResponseEntity<?> createBoard(@RequestBody BoardInsertRequest boardInsertRequest,
                                                    @AuthenticationPrincipal CustomMemberDetails loginMember){
         boardService.insertBoard(boardInsertRequest, loginMember);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping
-    public ResponseEntity<?> getBoardListController(){
+    public ResponseEntity<?> getBoardList(){
         List<Board> boardList = boardService.findIsNotDeleted();
         return ResponseEntity.ok(boardList);
     }
 
     @PatchMapping("/{boardId}")
-    public ResponseEntity<?> putBoardController(@PathVariable("boardId") Long boardId,
+    public ResponseEntity<?> modifyBoard(@PathVariable("boardId") Long boardId,
                                                 @RequestBody BoardPatchRequest boardPatchRequest) throws BoardException.BoardBadRequestException {
         boardService.patchBoard(boardId, boardPatchRequest);
         return new ResponseEntity<>(HttpStatus.OK);

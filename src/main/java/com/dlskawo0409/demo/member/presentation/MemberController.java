@@ -34,7 +34,7 @@ public class MemberController {
             @ApiResponse(responseCode = "400", description = "이메일 중복 혹은 닉네임 중복!"),
             @ApiResponse(responseCode = "500", description = "서버에러!!") })
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<?> joinMember(@Valid @RequestPart("member") MemberInsertRequest memberJoinRequest,
+    public ResponseEntity<?> createMember(@Valid @RequestPart("member") MemberInsertRequest memberJoinRequest,
                                         @Parameter(
                                                 description = "multipart/form-data 형식의 이미지를 input으로 받습니다.",
                                                 content = @Content(mediaType = MediaType.MULTIPART_FORM_DATA_VALUE)
