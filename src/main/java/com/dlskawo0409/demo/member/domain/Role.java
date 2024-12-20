@@ -42,9 +42,9 @@ public enum Role implements CodedEnum<String> {
     }
 
     @jakarta.persistence.Converter(autoApply = true)
-    static class Converter extends AbstractCodedEnumConverter<Blocked, Integer> {
+    static class Converter extends AbstractCodedEnumConverter<Role, String> {
         public Converter() {
-            super(Blocked.class);
+            super(Role.class);
         }
     }
 
