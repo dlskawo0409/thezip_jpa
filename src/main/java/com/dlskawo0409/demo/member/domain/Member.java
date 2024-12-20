@@ -43,6 +43,7 @@ public class Member implements UserDetails {
     @Convert(converter = Role.Converter.class)
     private Role role;
 
+    @Setter
     @OneToOne( cascade = CascadeType.ALL)
 //    @OneToMany( cascade = CascadeType.ALL)
     private Image profile;

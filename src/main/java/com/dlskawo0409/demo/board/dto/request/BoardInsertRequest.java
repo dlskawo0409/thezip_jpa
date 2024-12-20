@@ -6,8 +6,7 @@ import jakarta.validation.constraints.NotNull;
 public record BoardInsertRequest (
         @NotBlank
         String title,
-        String content,
-        @NotBlank
-        String author
+        String content
 ){
 }
+ 

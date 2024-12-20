@@ -21,6 +21,7 @@ public abstract class BasicEntity {
     @LastModifiedDate
     private LocalDateTime updatedAt = LocalDateTime.now();
 
+    @Setter
     private LocalDateTime deletedAt;
 
 
