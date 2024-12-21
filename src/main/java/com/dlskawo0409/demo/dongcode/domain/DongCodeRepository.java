@@ -1,5 +1,6 @@
 package com.dlskawo0409.demo.dongcode.domain;
 
+import com.dlskawo0409.demo.dongcode.dto.response.SidoGugunDongResponse;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -19,9 +20,8 @@ public interface DongCodeRepository extends JpaRepository<DongCode, String> {
     @Query("SELECT d.DongCode FROM DongCode d WHERE d.sidoName = :sido AND d.gugunName = :gugun AND d.dongName = :dong")
     String findDongCodeByDong(@Param("sido") String sido, @Param("gugun") String gugun, @Param("dong") String dong);
 
-    @Query("SELECT new com.example.dto.SidoGugunDongResponseDTO(d.sidoName, d.gugunName, d.dongName) " +
+    @Query("SELECT new com.example.dto.SidoGugunDongResponse(d.sidoName, d.gugunName, d.dongName) " +
             "FROM DongCode d WHERE d.DongCode = :dongCode")
-    SidoGugunDongResponseDTO findSidoGugunDongByDongCode(@Param("dongCode") String dongCode);
-
+    SidoGugunDongResponse findSidoGugunDongByDongCode(@Param("dongCode") String dongCode);
 
 }

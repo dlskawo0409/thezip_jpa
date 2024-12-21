@@ -1,6 +1,7 @@
 package com.dlskawo0409.demo.dongcode.application;
 
 import com.dlskawo0409.demo.dongcode.domain.DongCodeRepository;
+import com.dlskawo0409.demo.dongcode.dto.response.SidoGugunDongResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +29,7 @@ public class DongCodeService {
         return dongCodeRepository.findDongCodeByDong(sido.trim(),gugun.trim(),dong.trim());
     }
 
-    public SidoGugunDongResponseDTO getSidoGugunDong(String dongCode){
+    public SidoGugunDongResponse getSidoGugunDong(String dongCode){
         return dongCodeRepository.findSidoGugunDongByDongCode(dongCode);
     }
 
