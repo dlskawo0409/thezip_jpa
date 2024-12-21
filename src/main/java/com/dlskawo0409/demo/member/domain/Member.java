@@ -2,6 +2,7 @@ package com.dlskawo0409.demo.member.domain;
 
 import com.dlskawo0409.demo.college.domain.College;
 import com.dlskawo0409.demo.common.Image.domain.Image;
+import com.dlskawo0409.demo.interest_area.domain.InterestArea;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
@@ -26,7 +27,8 @@ import static lombok.AccessLevel.PROTECTED;
 @NoArgsConstructor(access = PROTECTED)
 @EntityListeners(AuditingEntityListener.class) // 필
 public class Member implements UserDetails {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long memberId;
 
     @Column(nullable = false, unique = true)
@@ -57,6 +59,8 @@ public class Member implements UserDetails {
     @OneToOne
     private College college;
 
+    @OneToMany(mappedBy = "member")
+    private  List<InterestArea> interestAreaList;
 
     @CreatedDate
     @Column(updatable = false)

@@ -11,7 +11,8 @@ import lombok.Setter;
 @Entity
 @Builder
 public class BoardComment {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long commentId;
 
     @ManyToOne

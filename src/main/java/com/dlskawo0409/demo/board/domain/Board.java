@@ -13,7 +13,8 @@ import java.util.List;
 @Builder
 @Entity
 public class Board extends BasicEntity {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer boardId;
     @Setter
     private String title;
