@@ -1,10 +1,7 @@
 package com.dlskawo0409.demo.interest_house.domain;
 
 import com.dlskawo0409.demo.member.domain.Member;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 

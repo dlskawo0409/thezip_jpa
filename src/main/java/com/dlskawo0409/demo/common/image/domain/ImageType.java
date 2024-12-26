@@ -6,7 +6,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum ImageType implements CodedEnum<String> {
 
-    PROFILE("PROFILE", "profile_image");
+    PROFILE("PROFILE", "profile_image"),
+    APARTMENT("APARTMENT","apartment_image");
 
     private final String key;
     private final String url;
